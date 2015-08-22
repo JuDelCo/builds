@@ -21,8 +21,8 @@
   // connect to canvas
   var Module = {
     TOTAL_MEMORY: 268435456,
-    filePackagePrefixURL: "Release/",
-    memoryInitializerPrefixURL: "Release/",
+    filePackagePrefixURL: "Compressed/",
+    memoryInitializerPrefixURL: "Compressed/",
     preRun: [],
     postRun: [],
     print: (function() {
@@ -59,15 +59,15 @@
   };
   Module.setStatus('Downloading (0.0/1)');
 </script>
-<script src="Release/UnityConfig.js"></script>
-<script src="Release/fileloader.js"></script>
+<script src="Compressed/UnityConfig.js"></script>
+<script src="Compressed/fileloader.js"></script>
 <script>if (!(!Math.fround)) {
   var script = document.createElement('script');
-  script.src = "Release/BUILD.js";
+  script.src = "Compressed/BUILD.js";
   document.body.appendChild(script);
 } else {
   var codeXHR = new XMLHttpRequest();
-  codeXHR.open('GET', 'Release/BUILD.js', true);
+  codeXHR.open('GET', 'Compressed/BUILD.js', true);
   codeXHR.onload = function() {
     var code = codeXHR.responseText;
     if (!Math.fround) { 
