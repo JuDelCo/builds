@@ -1,0 +1,334 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=620, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<title>Pico Launcher</title>
+
+	<style>
+		/* latin */
+		@font-face {
+		  font-family: 'Press Start 2P';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url(PressStart2P.ttf);
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+		}
+		html,body{
+			padding:0px;
+			margin:0px;
+
+			width:100%;
+			height:100%;
+
+			overflow:hidden;
+
+			display:flex;
+			align-items:center;
+		}
+
+		.btn{display:none}
+		#c{
+			width:580px;
+			height:540px;
+		}
+		#canvascontainer{
+			margin:auto;
+		}
+		
+
+		@media only screen
+		and (max-device-height : 1024px)  
+		and (max-device-width : 1024px)
+		and (orientation : portrait),
+		screen
+		and (max-device-height : 1024px)  
+		and (max-device-width : 1024px)
+		and (orientation : landscape) {
+			html,body{
+				background-color:#000;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+
+				display:block;
+				align-items:initial;
+			}
+			#c{
+				border:5px solid #e1e3e3;
+				border-radius:5px;
+				/*-webkit-filter:url("#warp");*/
+				/*-webkit-animation:test 0.1s infinite;*/
+			}
+			.btn{
+				pointer-events: all;
+				width:114px;
+				height:120px;
+				background-image:url('button.png');
+				background-size: 100%;
+				border:none;
+				image-rendering: -moz-crisp-edges;
+				image-rendering: -o-crisp-edges;
+				image-rendering: -webkit-optimize-contrast;
+				-ms-interpolation-mode: nearest-neighbor;
+				image-rendering: pixelated;
+				text-align:center;
+				box-sizing:border-box;
+				display:block;
+				position:absolute;
+
+				padding-top:27px;
+				padding-left:7px;
+				font-size:40px;
+				font-family:"Press Start 2P" sans-serif;
+				color:#65656e;
+				font-weight:bold;
+			}
+			.btn.pressed{
+				background-image:url('buttonpressed.png');
+				padding-top:39px;
+			}
+
+			#btncontainer{
+				background-color:#7a7b7b;
+				position:relative;
+				width:620px;
+				border-bottom-right-radius:100px;
+				border-bottom-left-radius:40px;
+				border-bottom:30px solid #555555;
+				box-sizing:border-box;
+
+				pointer-events: none;
+			}
+			#canvascontainer{
+				background-color:#7a7b7b;
+				padding:15px;
+				margin:0;
+			}
+		}
+
+		@media only screen
+		and (max-device-height : 1024px)  
+		and (max-device-width : 1024px) 
+		and (orientation : portrait) {
+			.btn.b0{top:120px;left:30px}
+			.btn.b1{top:120px;left:170px}
+			.btn.b2{top:10px;left:105px}
+			.btn.b3{top:230px;left:105px}
+			.btn.b4{top:160px;right:130px}
+			.btn.b5{top:60px;right:30px}
+		}
+
+		@media only screen 
+		and (max-device-height : 1024px)  
+		and (max-device-width : 1024px)
+		and (orientation : landscape) {
+			#c{
+				border:5px solid #e1e3e3;
+				border-radius:5px;
+				display:block;
+				margin:auto;
+				height:100%;
+				/*-webkit-filter:url("#warp");*/
+				/*-webkit-animation:test 0.1s infinite;*/
+			}
+			#canvascontainer{
+				height:100%;
+				width:100%;
+				box-sizing:border-box;
+			}
+			#c{
+				width:auto;
+			}
+			#btncontainer{
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:none;
+				border:none
+			}
+			.btn.b0{margin:auto;top:0;bottom:0;left:10px}
+			.btn.b1{margin:auto;top:0;bottom:0;left:70px}
+			.btn.b2{margin:auto;top:-70px;bottom:0;left:40px}
+			.btn.b3{margin:auto;top:70px;bottom:0;left:40px}
+			.btn.b4{margin:auto;top:35px;bottom:0;right:50px}
+			.btn.b5{margin:auto;top:-35px;bottom:0;right:10px}
+
+			.btn{
+				width:38px;
+				height:40px;
+				font-size:10px;
+				padding-top:10px;
+				padding-left:2px;
+			}
+			.btn.pressed{
+				padding-top:14px;
+			}
+		}
+	</style>
+	<script src="./fastclick.js"></script>
+</head>
+<body>
+	<div id="canvascontainer">
+		<canvas class="emscripten" id="c" width="580" height="540"></canvas>
+	</div>
+	<div id="btncontainer">
+		<div class="btn b0">L</div>
+		<div class="btn b1">R</div>
+
+		<div class="btn b2">U</div>
+		<div class="btn b3">D</div>
+
+		<div class="btn b4">Z</div>
+		<div class="btn b5">X</div>
+	</div>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <defs>
+		<filter id="bloom">
+		  <fegaussianblur in="SourceGraphic" stdDeviation="5" result="blur"></fegaussianblur>
+		  <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></fecolormatrix>
+		  <fecomponenttransfer>
+			<fefunca type="linear" slope="0.15"></fefunca>
+		  </fecomponenttransfer>
+		  <femerge> 
+			<femergenode in="SourceGraphic"></femergenode> 
+			<femergenode></femergenode>
+		  </femerge>
+		</filter>
+
+		<filter id="warp">
+			<feturbulence baseFrequency=".015" result="turbulence"></feturbulence>
+			<fedisplacementmap scale="50" in="SourceGraphic" in2="turbulence"></fedisplacementmap>
+		</filter>
+	  </defs>
+	</svg>
+	<script>
+		function xyzzy(e){
+			if(window.innerHeight > window.innerWidth){
+				document.querySelector('#btncontainer').style.height = window.innerHeight-580+'px';
+			}
+		}
+		window.addEventListener(("onorientationchange" in window ? "orientationchange" : "resize"), xyzzy)
+		xyzzy();
+
+		var args="jelpi";
+		/*var args=0;
+
+		if(location.search!=''){
+			args=location.search.substr(1)
+		}else{
+			args=prompt("Enter number of the cartridge you wish to load:",12311)
+		}*/
+
+		var Module = {
+			canvas: document.querySelector('#c'),
+			//arguments: [location.search.substr(1)+".p8.png"]
+			arguments: [args+'.p8.png']
+		};
+
+		var playable_area_count = 0;
+		var playarea_state = 1;
+		var codo_command = 0;
+		var codo_command_p = 0;
+		var codo_volume = 256;
+		var codo_running = true;
+
+
+		var pa_pid = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+		function onKeyDown_blocker(event) {
+			event = event || window.event;
+
+			// only while cartridge is active
+			// to do: check for element focus instead
+			if (playarea_state == 1 && codo_running)
+			{
+				var o = document.activeElement;
+				if (!o || o == document.body || o.tagName == "canvas")
+					if ([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1)
+					{
+						if (event.preventDefault) event.preventDefault();
+					}
+				}
+			}
+
+		document.addEventListener('keydown', onKeyDown_blocker, false);
+
+
+		var keyCodes = [37,39,38,40,90,88]
+
+		var clist = {};
+		function simulate(eventname,character) {
+			var evt = document.createEvent(navigator.userAgent.toLowerCase().indexOf('webkit') != -1 ? "Event" : "KeyboardEvent");
+			evt.initEvent(eventname,true,true,window)
+			evt.keyCode = Number(character)
+			document.body.dispatchEvent(evt);
+		}
+
+		function test(e){
+			var backup = {}
+			for(var i in clist){
+				backup[i] = clist[i]
+			}
+			clist = {}
+			console.log(clist)
+			var tList = e.touches; // get list of all touches
+			console.log(tList)
+			for (var i = 0; i < tList.length; i++) {
+				var thisTouch = tList[i]; // not 100% sure about this
+				var elementTouching = document.elementFromPoint( 
+					thisTouch.clientX, 
+					thisTouch.clientY
+				);
+				if(elementTouching.classList[1] != undefined){
+					var number = Number(elementTouching.classList[1].substr(-1))
+					if(document.querySelectorAll('.btn')[number] == elementTouching){
+						elementTouching.classList.add('pressed')
+						var keyCode = keyCodes[number]
+						clist[keyCode] = true
+						simulate('keydown',keyCode)
+						console.log('KEYDOWN',keyCode)
+					}
+				}
+			}
+			for(var i in backup){
+				if(clist[i] == undefined){
+					document.querySelector('.btn.b'+keyCodes.indexOf(Number(i))).classList.remove('pressed')
+					console.log('KEYUP',i)
+					simulate('keyup',i)
+				}
+			}
+			if(e.type == 'touchend'){
+				console.log(clist)
+			}
+		}
+
+		document.addEventListener('touchstart',test)
+		document.addEventListener('touchmove',test)
+		document.addEventListener('touchend',test)
+
+		/*document.addEventListener('touchend', function(e){
+			var n = Number(e.target.className.substr(-1))
+			if(n != NaN){
+				var currentcharacter = []
+				if(currentcharacter!= undefined){
+					simulate('keyup',currentcharacter)
+					delete clist[currentcharacter]
+				}
+			}
+		})*/
+
+		Module.canvas.focus()
+	</script>
+	<script src="./pico.js"></script>
+
+</body>
+</html>
