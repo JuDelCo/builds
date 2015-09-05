@@ -219,10 +219,9 @@
 		window.addEventListener(("onorientationchange" in window ? "orientationchange" : "resize"), xyzzy)
 		xyzzy();
 
-		var args="jelpi";
-		/*var args=0;
+		var args=0;
 
-		if(location.search!=''){
+		/*if(location.search!=''){
 			args=location.search.substr(1)
 		}else{
 			args=prompt("Enter number of the cartridge you wish to load:",12311)
@@ -231,7 +230,8 @@
 		var Module = {
 			canvas: document.querySelector('#c'),
 			//arguments: [location.search.substr(1)+".p8.png"]
-			arguments: [args+'.p8.png']
+			//arguments: [args+'.p8.png']
+			arguments: ['cartridge.png']
 		};
 
 		var playable_area_count = 0;
