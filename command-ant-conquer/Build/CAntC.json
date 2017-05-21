@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "CAntC.data.unityweb",
+"asmCodeUrl": "CAntC.asm.code.unityweb",
+"asmMemoryUrl": "CAntC.asm.memory.unityweb",
+"asmFrameworkUrl": "CAntC.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

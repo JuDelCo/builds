@@ -1,0 +1,201 @@
+{
+  "behaviors": {
+    "Bg_movementBehavior": {
+      "scriptId": "15",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        },
+        {
+          "name": "maxHeightAdded",
+          "type": "number"
+        }
+      ]
+    },
+    "Player_scriptBehavior": {
+      "scriptId": "18",
+      "line": 9,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "isDead",
+          "type": "boolean"
+        },
+        {
+          "name": "jumpForce",
+          "type": "number"
+        },
+        {
+          "name": "energy",
+          "type": "number"
+        },
+        {
+          "name": "maxEnergy",
+          "type": "number"
+        },
+        {
+          "name": "energyRefillRate",
+          "type": "number"
+        },
+        {
+          "name": "energyDepleteRate",
+          "type": "number"
+        },
+        {
+          "name": "lastTimeTouch",
+          "type": "number"
+        },
+        {
+          "name": "timeTransformThreshold",
+          "type": "number"
+        },
+        {
+          "name": "lastTimeFlap",
+          "type": "number"
+        },
+        {
+          "name": "timeFlapThreshold",
+          "type": "number"
+        }
+      ]
+    },
+    "Hud_scriptBehavior": {
+      "scriptId": "27",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "Camera_scriptBehavior": {
+      "scriptId": "31",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "heightOffset",
+          "type": "number"
+        }
+      ]
+    },
+    "Ground_scriptBehavior": {
+      "scriptId": "44",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        },
+        {
+          "name": "duplicated",
+          "type": "boolean"
+        }
+      ]
+    },
+    "World_scriptBehavior": {
+      "scriptId": "48",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "score",
+          "type": "number"
+        },
+        {
+          "name": "moveMultiplier",
+          "type": "number"
+        },
+        {
+          "name": "restartAvailable",
+          "type": "boolean"
+        }
+      ]
+    },
+    "Enemyground_scriptBehavior": {
+      "scriptId": "49",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "Kidground_scriptBehavior": {
+      "scriptId": "50",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "Enemysky_scriptBehavior": {
+      "scriptId": "51",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "Coin_scriptBehavior": {
+      "scriptId": "52",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "Hud_score_scriptBehavior": {
+      "scriptId": "53",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "Smoke_scriptBehavior": {
+      "scriptId": "73",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "movSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "Hud_hscore_scriptBehavior": {
+      "scriptId": "76",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "Bg_title_scriptBehavior": {
+      "scriptId": "79",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "maxHeightAdded",
+          "type": "number"
+        }
+      ]
+    },
+    "Titlescreen_scriptBehavior": {
+      "scriptId": "81",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": []
+    }
+  }
+}

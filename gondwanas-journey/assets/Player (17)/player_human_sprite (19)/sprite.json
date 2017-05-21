@@ -1,0 +1,65 @@
+{
+  "formatVersion": 3,
+  "maps": [
+    "map"
+  ],
+  "filtering": "pixelated",
+  "wrapping": "clampToEdge",
+  "pixelsPerUnit": 200,
+  "framesPerSecond": 10,
+  "opacity": null,
+  "alphaTest": 0.1,
+  "frameOrder": "rows",
+  "grid": {
+    "width": 99,
+    "height": 74
+  },
+  "origin": {
+    "x": 0.5,
+    "y": 0.1
+  },
+  "animations": [
+    {
+      "id": "0",
+      "name": "run",
+      "startFrameIndex": 5,
+      "endFrameIndex": 10,
+      "speed": 1.3
+    },
+    {
+      "id": "1",
+      "name": "jump",
+      "startFrameIndex": 11,
+      "endFrameIndex": 13,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "fall",
+      "startFrameIndex": 14,
+      "endFrameIndex": 16,
+      "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "land",
+      "startFrameIndex": 17,
+      "endFrameIndex": 21,
+      "speed": 0.8
+    },
+    {
+      "id": "4",
+      "name": "die",
+      "startFrameIndex": 26,
+      "endFrameIndex": 32,
+      "speed": 0.9
+    }
+  ],
+  "mapSlots": {
+    "map": "map",
+    "light": null,
+    "specular": null,
+    "alpha": null,
+    "normal": null
+  }
+}

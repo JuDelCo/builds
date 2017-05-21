@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Command Ant Conquer</title>
-	<!--<link rel="stylesheet" href="style.css">-->
-	<!--<script src="script.js"></script>-->
-	<style>
-		body
-		{
-			background-color: #222222;
-			text-align: center;
-		}
-	</style>
+	<title>Gondwana's Journey</title>
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	<iframe class="game" frameborder="0" src="https://itch.io/embed-upload/192096?color=333333" allowfullscreen="" width="960" height="600"></iframe>
+	<canvas tabindex="-1"></canvas>
+	<div id="loading">
+		<a href="http://superpowers-html5.com/" target="_blank">
+			<img src="images/superpowers-splash.svg" draggable="false">
+			<progress max="100" value="0"></progress>
+		</a>
+	</div>
+	<script src="SupCore.js"></script>
+	<script src="SupEngine.js"></script>
+	<script src="SupRuntime.js"></script>
 </body>
 </html>

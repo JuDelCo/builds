@@ -1,0 +1,365 @@
+{
+  "name": "LD35",
+  "assets": [
+    {
+      "id": "77",
+      "name": "TitleScreen",
+      "type": "scene"
+    },
+    {
+      "id": "81",
+      "name": "titlescreen_script",
+      "type": "script"
+    },
+    {
+      "id": "2",
+      "name": "Game",
+      "type": "scene"
+    },
+    {
+      "id": "31",
+      "name": "camera_script",
+      "type": "script"
+    },
+    {
+      "id": "48",
+      "name": "world_script",
+      "type": "script"
+    },
+    {
+      "id": "16",
+      "name": "bg",
+      "type": null,
+      "children": [
+        {
+          "id": "14",
+          "name": "Background",
+          "type": "scene"
+        },
+        {
+          "id": "80",
+          "name": "BackgroundTitle",
+          "type": "scene"
+        },
+        {
+          "id": "7",
+          "name": "bg_sky",
+          "type": "sprite"
+        },
+        {
+          "id": "8",
+          "name": "bg_cloud",
+          "type": "sprite"
+        },
+        {
+          "id": "9",
+          "name": "bg_sea",
+          "type": "sprite"
+        },
+        {
+          "id": "10",
+          "name": "bg_island",
+          "type": "sprite"
+        },
+        {
+          "id": "11",
+          "name": "bg_mountain",
+          "type": "sprite"
+        },
+        {
+          "id": "13",
+          "name": "bg_forest",
+          "type": "sprite"
+        },
+        {
+          "id": "74",
+          "name": "bg_tree1",
+          "type": "sprite"
+        },
+        {
+          "id": "75",
+          "name": "bg_tree2",
+          "type": "sprite"
+        },
+        {
+          "id": "15",
+          "name": "bg_script",
+          "type": "script"
+        },
+        {
+          "id": "79",
+          "name": "bg_title_script",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Player",
+      "type": null,
+      "children": [
+        {
+          "id": "20",
+          "name": "Player",
+          "type": "scene"
+        },
+        {
+          "id": "19",
+          "name": "player_human_sprite",
+          "type": "sprite"
+        },
+        {
+          "id": "21",
+          "name": "player_bird_sprite",
+          "type": "sprite"
+        },
+        {
+          "id": "18",
+          "name": "player_script",
+          "type": "script"
+        },
+        {
+          "id": "72",
+          "name": "Smoke",
+          "type": "scene"
+        },
+        {
+          "id": "71",
+          "name": "smoke_sprite",
+          "type": "sprite"
+        },
+        {
+          "id": "73",
+          "name": "smoke_script",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Enemies",
+      "type": null,
+      "children": [
+        {
+          "id": "23",
+          "name": "ground",
+          "type": null,
+          "children": [
+            {
+              "id": "40",
+              "name": "EnemyGround",
+              "type": "scene"
+            },
+            {
+              "id": "38",
+              "name": "enemyground_sprite",
+              "type": "sprite"
+            },
+            {
+              "id": "49",
+              "name": "enemyground_script",
+              "type": "script"
+            },
+            {
+              "id": "46",
+              "name": "KidGround",
+              "type": "scene"
+            },
+            {
+              "id": "45",
+              "name": "kidground_sprite",
+              "type": "sprite"
+            },
+            {
+              "id": "50",
+              "name": "kidground_script",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "24",
+          "name": "sky",
+          "type": null,
+          "children": [
+            {
+              "id": "41",
+              "name": "EnemySky",
+              "type": "scene"
+            },
+            {
+              "id": "39",
+              "name": "enemysky_sprite",
+              "type": "sprite"
+            },
+            {
+              "id": "51",
+              "name": "enemysky_script",
+              "type": "script"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "HUD",
+      "type": null,
+      "children": [
+        {
+          "id": "28",
+          "name": "HUD",
+          "type": "scene"
+        },
+        {
+          "id": "26",
+          "name": "hud_sprite_bg",
+          "type": "sprite"
+        },
+        {
+          "id": "29",
+          "name": "hud_sprite_bar",
+          "type": "sprite"
+        },
+        {
+          "id": "27",
+          "name": "hud_script",
+          "type": "script"
+        },
+        {
+          "id": "37",
+          "name": "font_small",
+          "type": "font"
+        },
+        {
+          "id": "47",
+          "name": "font_big",
+          "type": "font"
+        },
+        {
+          "id": "53",
+          "name": "hud_score_script",
+          "type": "script"
+        },
+        {
+          "id": "76",
+          "name": "hud_hscore_script",
+          "type": "script"
+        },
+        {
+          "id": "82",
+          "name": "fade_sprite",
+          "type": "sprite"
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Coin",
+      "type": null,
+      "children": [
+        {
+          "id": "34",
+          "name": "Coin",
+          "type": "scene"
+        },
+        {
+          "id": "33",
+          "name": "coin_sprite",
+          "type": "sprite"
+        },
+        {
+          "id": "52",
+          "name": "coin_script",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "name": "Ground",
+      "type": null,
+      "children": [
+        {
+          "id": "43",
+          "name": "Ground",
+          "type": "scene"
+        },
+        {
+          "id": "0",
+          "name": "ground_tileset",
+          "type": "tileSet"
+        },
+        {
+          "id": "1",
+          "name": "ground_tilemap",
+          "type": "tileMap"
+        },
+        {
+          "id": "44",
+          "name": "ground_script",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "name": "sfx",
+      "type": null,
+      "children": [
+        {
+          "id": "55",
+          "name": "cure",
+          "type": "sound"
+        },
+        {
+          "id": "56",
+          "name": "gold-1",
+          "type": "sound"
+        },
+        {
+          "id": "61",
+          "name": "impact",
+          "type": "sound"
+        },
+        {
+          "id": "62",
+          "name": "magic",
+          "type": "sound"
+        },
+        {
+          "id": "65",
+          "name": "success",
+          "type": "sound"
+        },
+        {
+          "id": "66",
+          "name": "voice",
+          "type": "sound"
+        },
+        {
+          "id": "67",
+          "name": "woosh",
+          "type": "sound"
+        }
+      ]
+    },
+    {
+      "id": "68",
+      "name": "music",
+      "type": null,
+      "children": [
+        {
+          "id": "69",
+          "name": "gameover",
+          "type": "sound"
+        },
+        {
+          "id": "70",
+          "name": "maintheme",
+          "type": "sound"
+        }
+      ]
+    }
+  ]
+}

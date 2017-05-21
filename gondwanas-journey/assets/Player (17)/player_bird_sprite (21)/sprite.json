@@ -1,0 +1,51 @@
+{
+  "formatVersion": 3,
+  "maps": [
+    "map"
+  ],
+  "filtering": "pixelated",
+  "wrapping": "clampToEdge",
+  "pixelsPerUnit": 150,
+  "framesPerSecond": 10,
+  "opacity": null,
+  "alphaTest": 0.1,
+  "frameOrder": "rows",
+  "grid": {
+    "width": 51,
+    "height": 57
+  },
+  "origin": {
+    "x": 0.5,
+    "y": 0.13
+  },
+  "animations": [
+    {
+      "id": "0",
+      "name": "run",
+      "startFrameIndex": 0,
+      "endFrameIndex": 1,
+      "speed": 0.2
+    },
+    {
+      "id": "2",
+      "name": "flap",
+      "startFrameIndex": 2,
+      "endFrameIndex": 4,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "die",
+      "startFrameIndex": 8,
+      "endFrameIndex": 13,
+      "speed": 0.8
+    }
+  ],
+  "mapSlots": {
+    "map": "map",
+    "light": null,
+    "specular": null,
+    "alpha": null,
+    "normal": null
+  }
+}
